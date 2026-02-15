@@ -10,6 +10,6 @@ export abstract class BasePage {
     }
 
     open(): Promise<Response | null> {
-        return this.page.goto("/inventory.html");
+        return this.page.goto(this.url);
     }
 }
