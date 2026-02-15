@@ -1,8 +1,10 @@
 import { expect, type Locator, type Page } from "@playwright/test";
 import { Header } from "./components/Header";
+import { BasePage } from "./BasePage";
 
-export class InventoryPage {
-    readonly page: Page;
+export class InventoryPage extends BasePage{
+    override readonly url: string = "/inventory.html";
+
     readonly header: Header;
 
     readonly container: Locator;
@@ -15,7 +17,8 @@ export class InventoryPage {
     readonly cartBadge: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
+
         this.header = new Header(page);
 
         this.container = page.locator('[data-test="inventory-container"]');
