@@ -8,7 +8,7 @@ test("offline: requests fail in offline mode", async ({ context, page, inventory
         failures.push(`${r.method()} ${r.url()} :: ${r.failure()?.errorText}`);
     });
 
-    await inventoryPage.open()
+    await inventoryPage.open().catch(() => null);
 
     expect(failures.length).toBeGreaterThan(0);
     // На лекції можна вивести failures в console.log, щоб було наочно 🙂
