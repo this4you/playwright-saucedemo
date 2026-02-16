@@ -17,7 +17,7 @@ export const test = base.extend<Fixtures>({
     // Default user for demos (SauceDemo standard user)
     user: async ({}, use) => {
         await use({
-            username: process.env.SAUCE_USERNAME ?? "visual_user",
+            username: process.env.SAUCE_USERNAME ?? "standard_user",
             password: process.env.SAUCE_PASSWORD ?? "secret_sauce",
         });
     },
