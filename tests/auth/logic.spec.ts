@@ -4,7 +4,7 @@ test("login: opens inventory (main) page", async ({ loginPage, inventoryPage, us
     await loginPage.open();
     await loginPage.login({
         ...user,
-        password: user.password + "test",
+        password: user.password,
     });
 
     await inventoryPage.expectOpened();
